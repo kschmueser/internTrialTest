@@ -40,31 +40,31 @@ namespace IntegrationTests
             // Must be successful.
             httpResponse.EnsureSuccessStatusCode();
 
-            //Deserialize result
+            //TODO: Deserialize result to be readable
 
-            //Assert
+            //TODO: Assert that we've retrieved all cars from the database
         }
 
 
 
-        //Create a car and assert that it exists in the DB
+        //TODO: Create a car and assert that it exists in the DB
 
-        //Retrieve all values of a car by its ID
+        //TODO: Retrieve all values of a car by its ID and assert
 
-        //Update (patch) the model of a specific car by its Id and assert that the update was successful
+        //TODO: Update (patch) the model of a specific car by its Id and assert that the update was successful
 
-        //Update (put) all properties of a single car by its Id and assert
+        //TODO: Update (put) all properties of a single car by its Id and assert that the changes were successful
 
-        //Delete a car and assert that it was deleted
-
-
-        //Get all cars with MilePerGallon in between 150 to 300 and assert that each fall within this range
+        //TODO: Delete a car and assert that it was deleted
 
 
-        //Get all Mustang cars and assert that each car is of this model
+        //TODO: Get all cars with MilePerGallon in between 150 to 300 and assert that each fall within this range
 
 
-        //Get all cars that are 2 years or older
+        //TODO: Get all  cars and assert that each car is of this model
+
+
+        //TODO: Get all cars that are 2 years or older and assert 
 
 
     }
