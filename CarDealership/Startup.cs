@@ -42,6 +42,13 @@ namespace CarDealership
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarDealership", Version = "v1" });
             });
+
+            services.AddCors(o => o.AddPolicy("AllowAllPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +64,8 @@ namespace CarDealership
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowAllPolicy");
 
             app.UseAuthorization();
 
