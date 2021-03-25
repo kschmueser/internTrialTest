@@ -25,5 +25,10 @@ namespace CarDealership.Models
         {
             return $"{Year} {Make} {Model}";
         }
+
+        public Car() { }
+
+        public Car(System.Guid guid) : base(guid)
+        { }
     }
 }

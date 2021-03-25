@@ -24,5 +24,10 @@ namespace CarDealership.Models
         {
             this.Id = Guid.NewGuid();
         }
+
+        public ModelBaseWithGuid(Guid guid)
+        {
+            this.Id = guid;
+        }
     }
 }
