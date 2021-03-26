@@ -60,6 +60,7 @@ namespace IntegrationTests
 
         //TODO: Get all cars with MilePerGallon in between 150 to 300 and assert that each fall within this range
 
+        //TODO: Get all cars that are of a specific body style ex: coupe, minivan, etc.
 
         //TODO: Get all Ford cars and assert that each car is of this make
 
