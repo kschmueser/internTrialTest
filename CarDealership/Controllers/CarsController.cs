@@ -105,5 +105,53 @@ namespace CarDealership.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [HttpGet("{minMpg}/{maxMpg}", Name = "GetByMPGRange")]
+        public IActionResult GetByMPGRange([FromRoute] int minMpg, int maxMpg)
+        {
+            try
+            {
+                var cars = _carService.GetByMPGRange(minMpg, maxMpg);
+
+                return Ok(_mapper.Map<List<CarDTO>>(cars));
+            }
+            catch (AppException ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpGet("GetByBodyStle/{bodyStyle}", Name = "GetByBodyStyle")]
+        public IActionResult GetByBodyStyle([FromRoute] string bodyStyle)
+        {
+            try
+            {
+                var cars = _carService.GetByBodyStyle(bodyStyle);
+
+                return Ok(_mapper.Map<List<CarDTO>>(cars));
+            }
+            catch (AppException ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpGet("GetByMake/{make}", Name = "GetByMake")]
+        public IActionResult GetByMake([FromRoute] string make)
+        {
+            try
+            {
+                var cars = _carService.GetByMake(make);
+
+                return Ok(_mapper.Map<List<CarDTO>>(cars));
+            }
+            catch (AppException ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

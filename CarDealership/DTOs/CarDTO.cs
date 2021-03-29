@@ -27,5 +27,7 @@ namespace CarDealership.DTOs
 
         // Read-only
         public string TransmissionTypeName { get; set; }
+
+        public int MilesPerGallon { get; set; }
     }
 }

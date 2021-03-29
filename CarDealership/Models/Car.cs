@@ -21,6 +21,8 @@ namespace CarDealership.Models
 
         public TransmissionTypes TransmissionType { get; set; }
 
+        public int MilesPerGallon { get; set; }
+
         public override string ToString()
         {
             return $"{Year} {Make} {Model}";

@@ -16,6 +16,10 @@ namespace CarDealership.Services
         void Create(Car carToCreate);
         Car Update(Car updatedCar);
         void Delete(Guid carId);
+        List<Car> GetByMPGRange(int minMpg, int maxMpg);
+        List<Car> GetByBodyStyle(string bodyStyle);
+        List<Car> GetByMake(string make);
+
     }
 
 
@@ -87,6 +91,33 @@ namespace CarDealership.Services
                 _context.Cars.Remove(car);
                 _context.SaveChanges();
             }
+        }
+
+        public List<Car> GetByMPGRange(int minMpg, int maxMpg)
+        {
+            var allCars = GetAll();
+
+            List<Car> cars = allCars.Where(c => (c.MilesPerGallon) > minMpg && (c.MilesPerGallon < maxMpg)).ToList();
+
+            return cars;
+        }
+
+        public List<Car> GetByBodyStyle(string bodyStyle)
+        {
+            var allCars = GetAll();
+
+            List<Car> cars = allCars.Where(c => c.BodyStyle.ToString() == bodyStyle).ToList();
+
+            return cars;
+        }
+
+        public List<Car> GetByMake(string make)
+        {
+            var allCars = GetAll();
+
+            List<Car> cars = allCars.Where(c => c.Make == make).ToList();
+
+            return cars;
         }
 
         #endregion

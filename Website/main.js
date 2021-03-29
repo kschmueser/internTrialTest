@@ -1,7 +1,7 @@
 function getExampleCar() {
     const xhr = new XMLHttpRequest();
     // localhost:44382 should match whatever port your api is running on
-    const url='https://localhost:44382/Cars/3f7c5757-23f6-4160-8ccb-fc60a741af81';
+    const url='https://localhost:5001/Cars/3f7c5757-23f6-4160-8ccb-fc60a741af81';
     xhr.open('GET', url);
     xhr.send();
 
